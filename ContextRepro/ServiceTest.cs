@@ -47,18 +47,17 @@ namespace ContextRepro
                 vorgang.Kontakt = kontakt;
                 
                 var beleg = _context.Belege.CreateInstance();
-                //beleg.Vorgang = vorgang;
+                beleg.Vorgang = vorgang;
 
                 var ba1 = _context.BelegAdressen.CreateInstance();
                 ba1.Name = "AAA";
+                ba1.Kontakt = kontakt;
                 var ba2 = _context.BelegAdressen.CreateInstance();
                 ba2.Name = "ZZZ";
+                ba2.Kontakt = kontakt;
 
                 beleg.SetBelegAdresse(ba1);
                 beleg.SetVersandAdresse(ba2);
-
-                vorgang.Belege = new List<Beleg>();
-                vorgang.Belege.Add(beleg);
 
                 // save
                 vorgangRepo.Add(vorgang);
