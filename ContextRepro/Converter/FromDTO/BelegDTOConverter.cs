@@ -19,9 +19,8 @@ namespace ContextRepro.Converter.FromDTO
             }
 
             beleg.BelegGuid = dtoBeleg.BelegGuid;
-            beleg.SetBelegAdresse(BelegAdresseDTOConverter.CreateOrUpdateFromDTO(db, dtoBeleg.BelegAdresse));
-            beleg.SetVersandAdresse(beleg.GetBelegAdresse());
-            beleg.SetVersandAdresse(BelegAdresseDTOConverter.CreateOrUpdateFromDTO(db, dtoBeleg.VersandAdresse));
+            beleg.BelegAdresse = BelegAdresseDTOConverter.CreateOrUpdateFromDTO(db, dtoBeleg.BelegAdresse);
+            beleg.VersandAdresse = BelegAdresseDTOConverter.CreateOrUpdateFromDTO(db, dtoBeleg.VersandAdresse);
 
             if (beleg.BelegAdresse != null)
             {

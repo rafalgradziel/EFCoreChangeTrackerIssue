@@ -45,7 +45,7 @@ namespace ContextRepro
 
                 var vorgang = vorgangRepo.Create();
                 vorgang.Kontakt = kontakt;
-                
+
                 var beleg = _context.Belege.CreateInstance();
                 beleg.Vorgang = vorgang;
 
@@ -56,8 +56,8 @@ namespace ContextRepro
                 ba2.Name = "ZZZ";
                 ba2.Kontakt = kontakt;
 
-                beleg.SetBelegAdresse(ba1);
-                beleg.SetVersandAdresse(ba2);
+                beleg.BelegAdresse = ba1;
+                beleg.VersandAdresse = ba2;
 
                 // save
                 vorgangRepo.Add(vorgang);

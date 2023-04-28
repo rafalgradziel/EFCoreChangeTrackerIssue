@@ -15,25 +15,5 @@ namespace ContextRepro.Entity.Belege
         {
             BelegGuid = Guid.NewGuid();
         }
-
-        public void SetBelegAdresse(BelegAdresse adresse)
-        {
-            BelegAdresse = adresse;
-        }
-
-        public BelegAdresse GetBelegAdresse()
-        {
-            return BelegAdresse;
-        }
-
-        public void SetVersandAdresse(BelegAdresse adresse)
-        {
-            VersandAdresse = adresse;
-        }
-
-        public BelegAdresse GetVersandAdresse()
-        {
-            return VersandAdresse;
-        }
     }
 }
