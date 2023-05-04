@@ -2,6 +2,7 @@
 using ContextRepro.Entity.Belege;
 using ContextRepro.Factory;
 using ContextRepro.Repositories;
+using System.Diagnostics;
 
 namespace ContextRepro
 {
@@ -33,6 +34,10 @@ namespace ContextRepro
 
             // save
             Vorgang dbVorgang = new Converter.FromDTO.VorgangDTOConverter().CreateOrUpdateFromDTO(_context, data);
+
+            // asserts
+            Debug.Assert(dbVorgang.Belege[0].BelegAdresse != null, "Expecting Belege.BelegAdresse not NULL");
+            Debug.Assert(dbVorgang.Belege[0].VersandAdresse != null, "Expecting Belege.VersandAdresse not NULL");
         }
 
         public void ScenarioTwo()
@@ -61,6 +66,10 @@ namespace ContextRepro
 
                 // save
                 vorgangRepo.Add(vorgang);
+
+                // asserts
+                Debug.Assert(vorgang.Belege[0].BelegAdresse != null, "Expecting Belege.BelegAdresse not NULL");
+                Debug.Assert(vorgang.Belege[0].VersandAdresse != null, "Expecting Belege.VersandAdresse not NULL");
             }
         }
     }
