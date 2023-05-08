@@ -26,20 +26,6 @@ namespace ContextRepro.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Sequence",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TableName = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
-                    LastId = table.Column<long>(type: "bigint", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_dbo.Sequence", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "BelegAdresse",
                 columns: table => new
                 {
@@ -142,9 +128,6 @@ namespace ContextRepro.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Beleg");
-
-            migrationBuilder.DropTable(
-                name: "Sequence");
 
             migrationBuilder.DropTable(
                 name: "BelegAdresse");

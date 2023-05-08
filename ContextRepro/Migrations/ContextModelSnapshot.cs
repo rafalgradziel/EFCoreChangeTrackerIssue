@@ -132,28 +132,6 @@ namespace ContextRepro.Migrations
                     b.ToTable("Vorgang", (string)null);
                 });
 
-            modelBuilder.Entity("ContextRepro.Entity.Sequence.Sequence", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<long>("LastId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("TableName")
-                        .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("nvarchar(80)");
-
-                    b.HasKey("Id")
-                        .HasName("PK_dbo.Sequence");
-
-                    b.ToTable("Sequence", (string)null);
-                });
-
             modelBuilder.Entity("ContextRepro.Entity.Belege.Beleg", b =>
                 {
                     b.HasOne("ContextRepro.Entity.Belege.BelegAdresse", "BelegAdresse")

@@ -1,5 +1,4 @@
 ﻿using ContextRepro.Entity.Configuration;
-using ContextRepro.Entity.Configuration.Sequence;
 using Microsoft.EntityFrameworkCore;
 
 namespace ContextRepro.Infrastructure.Model
@@ -17,9 +16,6 @@ namespace ContextRepro.Infrastructure.Model
             _modelBuilder.ApplyConfiguration(new VorgangConfiguration());
             _modelBuilder.ApplyConfiguration(new BelegAdresseConfiguration());
             _modelBuilder.ApplyConfiguration(new KontaktConfiguration());
-
-            // Sequence
-            _modelBuilder.ApplyConfiguration(new SequenceConfiguration());
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using ContextRepro.Entity.Belege;
-using ContextRepro.Entity.Sequence;
 using ContextRepro.Infrastructure.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -18,7 +17,6 @@ namespace ContextRepro
         public virtual DbSet<Beleg> Belege { get; set; }
         public virtual DbSet<Vorgang> Vorgaenge { get; set; }
         public virtual DbSet<BelegAdresse> BelegAdressen { get; set; }
-        public virtual DbSet<Sequence> Sequences { get; set; }
         #endregion
 
         internal Context(DbContextOptions<Context> options, long? mandantId = null, bool forTesting = false) : base(options)
