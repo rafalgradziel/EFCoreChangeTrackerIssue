@@ -15,8 +15,8 @@ namespace ContextRepro.Entity.Configuration
             entity.Property(e => e.KontaktId).HasDefaultValueSql("((0))");
 
             entity.HasOne(d => d.Kontakt)
-                .WithOne()
-                .HasForeignKey<BelegAdresse>(d => d.KontaktId)
+                .WithMany()
+                .HasForeignKey(d => d.KontaktId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_dbo.BelegAdresse_dbo.Kontakt_KontaktId");
         }

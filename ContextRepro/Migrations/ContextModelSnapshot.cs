@@ -159,8 +159,8 @@ namespace ContextRepro.Migrations
             modelBuilder.Entity("ContextRepro.Entity.Belege.BelegAdresse", b =>
                 {
                     b.HasOne("ContextRepro.Entity.Belege.Kontakt", "Kontakt")
-                        .WithOne()
-                        .HasForeignKey("ContextRepro.Entity.Belege.BelegAdresse", "KontaktId")
+                        .WithMany()
+                        .HasForeignKey("KontaktId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_dbo.BelegAdresse_dbo.Kontakt_KontaktId");
